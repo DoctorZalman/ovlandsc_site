@@ -19,13 +19,13 @@ if (! defined('ABSPATH')){
               <div class="icon-content"><span class="svg-icon"><i class="flaticon-consulting"></i></span></div>
             </a>
             <a href="#" class="emtry-title">
-              <p class="title">Consultation</p>
+              <p class="title">Consultation<?php the_field('step_1_title'); ?></p>
             </a>
             <div class="content">
-              <div class="descreption"><span>How all this mistaken idea all off work pleasure.</span></div>
+              <div class="descreption"><span>How all this mistaken idea all off work pleasure.<?php the_field('step_1_desc'); ?></span></div>
             </div>
           </div>
-          <div class="text-footer">Step 2</div>
+          <div class="text-footer"><?php the_field('step_1_step'); ?>Step 2</div>
         </div>
       </div>
       <div class="col-sm-6 col-md-3 col-xs-12">

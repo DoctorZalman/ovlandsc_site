@@ -16,7 +16,7 @@ if (! defined('ABSPATH')){
       <div class="col-md-4 col-sm-6">
         <div class="blog-wrapper">
           <div class="entry-thumbnail">
-            <a href="<?php echo get_the_permalink($blog->ID); ?>"><img src="<?php echo get_the_post_thumbnail_url( $blog->ID, 'full' );?>" alt="img" width="600" height="340" /></a>
+            <a href="<?php echo get_the_permalink($blog -> ID); ?>"><img src="<?php echo get_the_post_thumbnail_url( $blog -> ID, 'full' );?>" alt="img" width="600" height="340" /></a>
           </div>
           <div class="entry-header">
             <div class="entry-meta">
