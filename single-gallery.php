@@ -9,13 +9,16 @@ get_header();
   <div class="blogpage pagepadding ">
     <div class="container">
       <div class="row blog content-sidebar">
-        <div class="col-sm-12 col-md-8 content-area">
+        <?php foreach (getBlogs() as $blog) : ?>
+          <div class="col-sm-12 col-md-8 content-area">
           <div class="blog-details">
             <header class="entry-header">
-              <div class="entry-thumbnail margbtm30"><img src="<?php echo get_template_directory_uri();?>/images/blogs/blog-big-7.jpg" alt=""></div>
-              <h1 class="entry-title">Landscaping Adds Value to Your Property</h1>
+              <div class="entry-thumbnail margbtm30"><img src="<?php echo get_the_permalink($blog -> ID); ?>"><img src="<?php echo get_the_post_thumbnail_url( $blog -> ID, 'full' );?>" alt="photo"></div>
+              <h1 class="entry-title">
+                <a href="<?php echo get_the_permalink($blog->ID); ?>"><?php echo $blog -> post_title; ?></a>
+              </h1>
               <div class="entry-meta">
-                <a href="#">September 12, 2018</a> / by <a href="#">steeltheme</a> / in <a href="#">Gardern &amp; Landscape Care</a>
+                <a href="#"><?php echo get_the_date('F d Y', $blog->ID) ?></a> / Автор <a href="#"><?php the_field('blogs_us_autor', $blog -> ID); ?></a>
               </div>
             </header>
             <div class="entry-content">
@@ -173,6 +176,7 @@ get_header();
 
           </div>
         </div>
+       <?php endforeach; ?>
         <div class="primary-sidebar col-sm-12 col-md-4">
           <div class="">
             <div class="widget widget_search">

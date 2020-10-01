@@ -1,25 +1,8 @@
 <?php
-/*Template name: Serv*/
+/*Template name: Service Page*/
 get_header();
 ?>
-<!--Page header-->
-<div class="page-header  parallax has-image">
-	<div class="page-header-content">
-		<div class="featured-image"></div>
-		<div class="container">
-			<div class="header-box">
-				<div class="page-title">
-					<h1><?php wp_title(''); ?></h1>
-				</div>
-				<div class="header-breadcrumb">
-					<nav class="breadcrumbs"><a class="home" href="#"><span>Home</span></a> - Services
-					</nav>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!--Page header end-->
+<?php get_template_part('template-parts/title/title'); ?>
 
 <!--all team-->
 <div class="pageservice pagepadding">
