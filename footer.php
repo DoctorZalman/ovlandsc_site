@@ -13,9 +13,8 @@ wp_footer();
           <a href="<?php echo home_url()?>">
           <img src="<?php echo get_template_directory_uri();?>/images/14-01.svg" width="253" alt="Footer Logo">
         </div>
-        <h4> Chicago</h4>
-        <p> United States of America
-          <br> 54 N. Lakewood Avenue, IL 60640</p>
+        <h4>OV-Landscape</h4>
+        <p><?php the_field('gaslo_team', 'options');?></p>
 <!--        <div class="map-link">-->
 <!--          <a href="#"><span class="svg-icon"><i class="flaticon-right"></i></span> Find Us On Map</a>-->
 <!--        </div>-->
@@ -68,24 +67,35 @@ wp_footer();
 <div id="footer-widgets-middle" class="footer-widgets widgets-area footer-middle">
   <div class="container">
     <div class="row">
-	    <?php foreach (getCall_us() as $call_us) :?>
-      <div class="col-xs-12 col-sm-4 col-md-4 email"><i class="fa fa-envelope"></i><a href="mailto:<?php the_field('email-contact');?>">Supportyou@Lawncare.com</div>
+      <div class="col-xs-12 col-sm-4 col-md-4 email">
+        <i class="fa fa-envelope"></i>
+        <a href="mailto:<?php the_field('email-contact', 'options');?>" class="value">
+            <?php the_field('email-contact', 'options');?>
+        </a>
+      </div>
       <div class="col-xs-12 col-sm-4 col-md-4 phone">
-        <div><?php echo $call_us ['title_field']; ?></div><span><a href="tel:<?php echo $call_us ['business_number']; ?>"><?php echo $call_us ['business_number']; ?></a></span>
+        <div>Зателефонуйте нам!</div>
+        <?php foreach (getPhone() as $phone_us) : ?>
+          <span>
+            <a href="tel:<?php echo $phone_us ['business_number']; ?>">
+                <?php echo $phone_us ['business_number']; ?>
+            </a>
+          </span><br>
+        <?php endforeach; ?>
       </div>
       <div class="col-xs-12 col-sm-4 col-md-4 social">
         <div class="socials footer-social">
-          <span>We Are Social</span>
+          <span>Ми у соц. мережах</span>
           <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a>
           <a href="https://www.skype.com" target="_blank"><i class="fa fa-skype"></i></a>
           <a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
           <a href="https://facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
         </div>
       </div>
-      <?php endforeach; ?>
     </div>
   </div>
 </div>
+
 <!-- footer middle end-->
 
 <!-- copyright -->

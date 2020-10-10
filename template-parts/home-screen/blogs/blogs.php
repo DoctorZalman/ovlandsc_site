@@ -24,6 +24,7 @@ if (! defined('ABSPATH')){
               <span class="meta-author"><?php the_field('blogs_us_autor', $blog -> ID); ?></span>
             </div>
             <h2 class="entry-title"><a href="<?php echo get_the_permalink($blog->ID); ?>"><?php echo $blog -> post_title; ?></a></h2>
+            <h2 class="entry-title"><a href="<?php echo get_the_permalink($blog->ID); ?>"><?php echo $blog -> post_excerpt; ?></a></h2>
           </div>
         </div>
       </div>

@@ -1,65 +1,47 @@
 <?php
-defined( 'ABSPATH' ) || exit;
-get_header();
-//comments
+defined('ABSPATH') || exit;
+
+if (post_password_required()) {
+	return;
+}
 ?>
 
-<div class="comments-area">
-	<?php if( have_comments() ){
-	// comments
+<div id="comments" class="comments-area">
 
-	echo '<ul class="commentlist">';
-	wp_list_comments('type=comment');
-	echo '</ul>';
+	<?php if (have_comments()) : ?>
 
-} ?>
-	<div class="comment-respond">
-		<form  class="comment-form" novalidate="">
-			<?php
+      <ol class="comment-list">
+		  <?php
+		  wp_list_comments('type=comment&callback=format_comment');
+		  ?>
+      </ol>
 
-			comment_form([
-				'comment_field' => '<p class="col-sm-12">
-										<label for="comment">Коментарій</label>
-										<textarea id="comment" name="comment" cols="45" rows="8" required="required"></textarea>
-									</p>',
+	<?php endif;
+	if (!comments_open() && get_comments_number() && post_type_supports(get_post_type(), 'comments')) :
+		?>
+      <p class="no-comments text-center">Коментарі закриті.</p>
+	<?php endif; ?>
+  <div class="comment-top mt-5">
+	  <?php comment_form([
+		  'comment_field' => '<div class="form-group">
+                                <textarea class="form-control" name="comment" placeholder="Коментар..." required=""></textarea>
+                            </div>',
 
-				'fields' => [
-					'author' => '<p class="col-md-6 col-sm-12">
-									<label>Ім\'я *</label>
-									<input id="author" name="author" required="" value="" size="30" type="text">
-								</p>',
-					'email' => '<p class="col-md-6 col-sm-12">
-									<label>Email *</label>
-									<input id="email" name="email" required="" value="" size="30" type="email">
-								</p>'
-				],
-				'class_submit'  => 'form-submit',
-				'label_submit'  => __('Post Comment'),
-				'title_reply'   => __('Залиште свій коментар'),
-				'class_form'    => 'col-md-6 col-sm-12',
-			]);
-			?>
-<!--			<p class="col-md-6 col-sm-12">-->
-<!--				<label>Name *</label>-->
-<!--				<input id="author" name="author" required="" value="" size="30" type="text">-->
-<!--			</p>-->
-<!--			<p class="col-md-6 col-sm-12">-->
-<!--				<label>Email *</label>-->
-<!--				<input id="email" name="email" required="" value="" size="30" type="email">-->
-<!--			</p>-->
-<!--			<p class="col-md-12 col-sm-12">-->
-<!--				<label>Website</label>-->
-<!--				<input id="url" name="url" value="" size="30" type="text">-->
-<!--			</p>-->
-<!--			<p class="col-sm-12">-->
-<!--				<label for="comment">Comment</label>-->
-<!--				<textarea id="comment" name="comment" cols="45" rows="8" required="required"></textarea>-->
-<!--			</p>-->
-<!--			<p class="form-submit">-->
-<!--				<input name="submit" id="submit" class="submit" value="Post Comment" type="submit">-->
-<!--			</p>-->
-		</form>
-	</div>
+		  'fields' => [
+			  'author' => '<div class="form-group">
+                            <input class="form-control" type="text" name="author" placeholder="І\'мя" required="">
+                        </div>',
+			  'email' => '<div class="form-group">
+                            <input class="form-control" type="email" name="email" placeholder="E-mail" required="">
+                        </div>',
+
+		  ],
+
+		  'class_submit' => 'blog-btn mt-1',
+		  'label_submit' => 'Опублікувати коментар',
+		  'title_reply' => 'Залишіть коментар',
+		  'class_form' => 'comment-bottom agileinfo_mail_grid_right mt-4',
+	  ]);?>
+  </div>
+
 </div>
-
-

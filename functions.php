@@ -5,10 +5,12 @@ add_filter('show_admin_bar', '__return_false');
 add_action( 'wp_enqueue_scripts', 'my_scripts_and_styles');
 add_action( 'init', 'register_post_types');
 add_theme_support('post-thumbnails'); // можливість додавати картинки в пости і т.д
+//add_action( 'widgets_init', 'widgets_zones' );
+add_action( 'widgets_init', 'blog_single_right' );
 
 function my_scripts_and_styles() {
-  wp_deregister_script('jquery');
-  wp_enqueue_script('jquery-1.12.4', get_template_directory_uri().'/js/jquery-1.12.4.min.js', [], null, true);
+//  wp_deregister_script('jquery');
+//  wp_enqueue_script('jquery-1.12.4', get_template_directory_uri().'/js/jquery-1.12.4.min.js', [], null, true);
   wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.min.js', [], null, true);
   wp_enqueue_script('fancybox', get_template_directory_uri().'/js/jquery.fancybox.pack.js', [], null, true);
   wp_enqueue_script('fancybox-media', get_template_directory_uri().'/js/jquery.fancybox-media.js', [], null, true);
@@ -16,7 +18,6 @@ function my_scripts_and_styles() {
   wp_enqueue_script('slick', get_template_directory_uri().'/js/slick.js', [], null, true);
   wp_enqueue_script('jquery.countTo', get_template_directory_uri().'/js/jquery.countTo.js', [], null, true);
   wp_enqueue_script('validate', get_template_directory_uri().'/js/validate.js', [], null, true);
-
 //  //[if lt IE 9]
 //  wp_enqueue_script('validate', 'https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js', [], null, true);
 //  wp_enqueue_script('respond', get_template_directory_uri().'/js/respond.js', [], null, true);
@@ -52,6 +53,12 @@ function my_scripts_and_styles() {
 
 //register menus
 //add_action( 'after_setup_theme', 'register_menus');
+function blog_single_right() {
+	register_sidebar([
+		'name'=> 'blog single right',
+		'id' => 'blog_single_right',
+	]);
+}
 
 register_nav_menus([
   'nav_menu' => 'Головне меню',
@@ -72,13 +79,13 @@ function getSchedule() {
 	return get_field('schedule', 'options');
 };
 
-function getCall_us() {
-	return get_field('call_us', 'options');
+function getPhone() {
+	return get_field('phone_us', 'options');
 };
 
 function getBlogs() {
 	return get_posts([
-		'numberposts' => -1,
+		'numberposts' => 3,
 		'orderby' => 'date',
 		'order' => 'DESC',
 		'post_status' => 'publish',
@@ -86,9 +93,20 @@ function getBlogs() {
 	]);
 };
 
+
 function getServices() {
 	return get_posts([
 		'numberposts' => 2,
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'post_status' => 'publish',
+		'post_type' => 'services',
+	]);
+};
+
+function getServices_page() {
+	return get_posts([
+		'numberposts' => -1,
 		'orderby' => 'date',
 		'order' => 'DESC',
 		'post_status' => 'publish',
@@ -106,16 +124,37 @@ function getGallery() {
 	]);
 };
 
-//function getProcess() {
-//	return get_posts([
-//		'numberposts' => 4,
-//		'orderby' => 'date',
-//		'order' => 'DESC',
-//		'post_status' => 'publish',
-//		'post_type' => 'process',
-//	]);
-//};
+function getAllgallery() {
+	return get_posts([
+		'numberposts' => -1,
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'post_status' => 'publish',
+		'post_type' => 'gallery',
+	]);
+};
 
+function getOur_history() {
+	return get_posts([
+		'numberposts' => -1,
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'post_status' => 'publish',
+		'post_type' => 'our_history',
+	]);
+};
+
+function getCounter() {
+	return get_field('experience_company', '191');
+};
+
+function getWho_we_are_desc() {
+	return get_field('who_we_are_desc1', '157');
+};
+
+function getOur_process() {
+	return get_field('step_1', 'options');
+};
 function register_post_types() {
   register_post_type('slider', [
     'labels' => [
@@ -134,7 +173,7 @@ function register_post_types() {
     ],
     'public' => true,
     'menu_position' => 4,
-    'menu_icon' => 'dashicons-format-aside',
+    'menu_icon' => 'dashicons-format-video',
     'hierarchical' => true,
     'supports' => ['title', 'editor', 'comments', 'thumbnail'],
     'has_archive' => true,
@@ -160,11 +199,12 @@ function register_post_types() {
 		],
 		'public' => true,
 		'menu_position' => 5,
-		'menu_icon' => 'dashicons-format-aside',
+		'menu_icon' => 'dashicons-admin-tools',
 		'hierarchical' => true,
-		'supports' => ['title', 'excerpt', 'thumbnail'],
+		'supports' => ['title', 'editor', 'excerpt', 'thumbnail'],
 		'has_archive' => true,
 		'rewrite' => true,
+    'taxonomies' => ['category'],
 		'query_var' => true,
 		'show_in_rest' => true
 	]);
@@ -186,7 +226,7 @@ function register_post_types() {
 		],
 		'public' => true,
 		'menu_position' => 6,
-		'menu_icon' => 'dashicons-format-aside',
+		'menu_icon' => 'dashicons-images-alt',
 		'hierarchical' => true,
 		'supports' => ['title', 'excerpt', 'thumbnail'],
 		'has_archive' => true,
@@ -194,24 +234,50 @@ function register_post_types() {
 		'query_var' => true,
 		'show_in_rest' => true
 	]);
-	register_post_type('process', [
+
+	register_post_type('our_history', [
 		'labels' => [
-			'name' => 'Робочий процес',
-			'singular_name' => 'Процес',
-			'add_new' => 'Додати процес',
-			'add_new_item' => 'Додавання процесу',
-			'edit_item' => 'Редагування процесу',
-			'new_item' => 'Новий процес',
-			'view_item' => 'Дивитись процес',
-			'search_items' => 'Шукати процес',
+			'name' => 'Наша історія',
+			'singular_name' => 'Історія',
+			'add_new' => 'Додати подію',
+			'add_new_item' => 'Додавання події',
+			'edit_item' => 'Редагування події',
+			'new_item' => 'Нова подія',
+			'view_item' => 'Дивитись подію',
+			'search_items' => 'Шукати подію',
 			'not_found' => 'Не знайдено',
 			'not_found_in_trash' => 'Не знайдено в корзині',
 			'parent_item_colon' => '',
-			'menu_name' => 'Робочий процес',
+			'menu_name' => 'Історія',
 		],
 		'public' => true,
 		'menu_position' => 7,
-		'menu_icon' => 'dashicons-format-aside',
+		'menu_icon' => 'dashicons-clock',
+		'hierarchical' => true,
+		'supports' => ['title', 'excerpt', 'thumbnail'],
+		'has_archive' => true,
+		'rewrite' => true,
+		'query_var' => true,
+		'show_in_rest' => true
+	]);
+	register_post_type('our_counter', [
+	  'labels' => [
+		  'name' => 'Наш досвід',
+		  'singular_name' => 'Досвід',
+		  'add_new' => 'Додати',
+		  'add_new_item' => 'Додавання',
+		  'edit_item' => 'Редагування',
+		  'new_item' => 'Новий',
+		  'view_item' => 'Дивитись',
+		  'search_items' => 'Шукати',
+		  'not_found' => 'Не знайдено',
+		  'not_found_in_trash' => 'Не знайдено в корзині',
+		  'parent_item_colon' => '',
+		  'menu_name' => 'Досвід',
+		],
+		'public' => true,
+		'menu_position' => 7,
+		'menu_icon' => 'dashicons-universal-access',
 		'hierarchical' => true,
 		'supports' => ['title'],
 		'has_archive' => true,
@@ -221,12 +287,12 @@ function register_post_types() {
 	]);
 };
 
-if (function_exists('acf_add_options_page')) {
+if (function_exists ('acf_add_options_page')) {
 
 	acf_add_options_page([
 		'menu_title' => 'Додаткові поля',
 		'menu_slug' => 'theme-general-settings',
-		'position' => '5'
+		'position' => '9'
 	]);
 
 	acf_add_options_sub_page([
@@ -236,22 +302,18 @@ if (function_exists('acf_add_options_page')) {
 	]);
 
 	acf_add_options_sub_page([
-		'page_title' => 'Блок номер телефону',
-		'menu_title' => 'Call_us',
-		'parent_slug' => 'theme-general-settings',
-	]);
-	acf_add_options_sub_page([
 		'page_title' => 'Блок контактів',
 		'menu_title' => 'Contacts',
 		'parent_slug' => 'theme-general-settings',
 	]);
-//	acf_add_options_sub_page([
-//		'page_title' => 'Блок підвалу',
-//		'menu_title' => 'Footer',
-//		'parent_slug' => 'theme-general-settings',
-//	]);
 
+	acf_add_options_sub_page([
+		'page_title' => 'Блок Процесів',
+		'menu_title' => 'Process',
+		'parent_slug' => 'theme-general-settings',
+	]);
 };
+
 
 // copyright
 function comicpress_copyright() {
@@ -276,3 +338,89 @@ post_status = 'publish'
 	return $output;
 }
 
+function format_comment($comment, $args, $depth) {
+	$GLOBALS['comment'] = $comment; ?>
+	<li class="media comment">
+		<div class="img-fluid">
+			<?php echo get_avatar( $comment, 75); ?>
+		</div>
+		<div class="media-body pt-xl-2 pl-3">
+			<h5 class="d-inline"><?php comment_author(); ?></h5>
+			<span class="date"><?php comment_date('d.m.Y g:i a');?></span>
+			<p><?php comment_text(); ?></p>
+			<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+		</div>
+	</li>
+<?php };
+
+//function the_breadcrumb(){
+//
+//	// получаем номер текущей страницы
+//	$pageNum = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+//
+//	$separator = ' &raquo; '; //  »
+//
+//	// если главная страница сайта
+//	if( is_front_page() ){
+//
+//		if( $pageNum > 1 ) {
+//			echo '<a href="' . site_url() . '">Главная</a>' . $separator . $pageNum . '-я страница';
+//		} else {
+//			echo 'Вы находитесь на главной странице';
+//		}
+//
+//	} else { // не главная
+//
+//		echo '<a href="' . site_url() . '">Главная</a>' . $separator;
+//
+//
+//		if( is_single() ){ // записи
+//
+//			the_category(', '); echo $separator; the_title();
+//
+//		} elseif ( is_page() ){ // страницы WordPress
+//
+//			the_title();
+//
+//		} elseif ( is_category() ) {
+//
+//			single_cat_title();
+//
+//		} elseif( is_tag() ) {
+//
+//			single_tag_title();
+//
+//		} elseif ( is_day() ) { // архивы (по дням)
+//
+//			echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $separator;
+//			echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a>' . $separator;
+//			echo get_the_time('d');
+//
+//		} elseif ( is_month() ) { // архивы (по месяцам)
+//
+//			echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $separator;
+//			echo get_the_time('F');
+//
+//		} elseif ( is_year() ) { // архивы (по годам)
+//
+//			echo get_the_time('Y');
+//
+//		} elseif ( is_author() ) { // архивы по авторам
+//
+//			global $author;
+//			$userdata = get_userdata($author);
+//			echo 'Опубликовал(а) ' . $userdata->display_name;
+//
+//		} elseif ( is_404() ) { // если страницы не существует
+//
+//			echo 'Ошибка 404';
+//
+//		}
+//
+//		if ( $pageNum > 1 ) { // номер текущей страницы
+//			echo ' (' . $pageNum . '-я страница)';
+//		}
+//
+//	}
+//
+//}

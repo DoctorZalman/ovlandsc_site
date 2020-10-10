@@ -6271,6 +6271,7 @@
 	    color: #848484;
 	    font-size: .875em
 	}
+
 	
 	.header-v4 .header-bar .highlights .widget .pull-right>div:first-child {
 	    font-weight: 600;
@@ -7964,9 +7965,10 @@
 	.blog.sidebar-content .primary-sidebar,
 	.single.content-sidebar .primary-sidebar,
 	.single.sidebar-content .primary-sidebar {
-	    padding-left: 30px
+	    padding-left: 30px;
+		list-style: none;
 	}
-	
+
 	.single-service #primary {
 	    border-right: 0
 	}
@@ -8473,18 +8475,18 @@
 	    position: relative
 	}
 	
-	.arrow-blog:before {
-	    content: '';
-	    position: absolute;
-	    top: -50px;
-	    left: 50%;
-	    -webkit-transform: translateX(-50%);
-	    -ms-transform: translateX(-50%);
-	    transform: translateX(-50%);
-	    background: url(../images/icon/arrow-blog.png) center center no-repeat;
-	    width: 95px;
-	    height: 50px
-	}
+	/*.arrow-blog:before {*/
+	/*    content: '';*/
+	/*    position: absolute;*/
+	/*    top: -50px;*/
+	/*    left: 50%;*/
+	/*    -webkit-transform: translateX(-50%);*/
+	/*    -ms-transform: translateX(-50%);*/
+	/*    transform: translateX(-50%);*/
+	/*    background: url(../images/icon/arrow-blog.png) center center no-repeat;*/
+	/*    width: 95px;*/
+	/*    height: 50px*/
+	/*}*/
 	
 	.customer-help-1 .row {
 	    border: 1px solid #eee;
@@ -9057,8 +9059,9 @@
 	
 	.wpcf7 .contact-home textarea {
 	    margin-bottom: 0 !important;
-	    height: 255px
+	    height: 177px;
 	}
+
 	
 	.wpcf7 .contact-home input[type="submit"] {
 	    background: #9cc212;
@@ -9071,6 +9074,10 @@
 	.wpcf7 .contact-home input[type="submit"]:hover {
 	    background: none;
 	    color: #9cc212
+	}
+
+	.wpcf7 form .wpcf7-response-output {
+		border: none;
 	}
 	/*** 
 
@@ -9614,9 +9621,13 @@
 	
 	.header-v1 .topbar .widget .pull-right div {
 	    color: #a2b1a5;
-	    font-size: .875em
+	    font-size: .875em;
+		text-align: center;
 	}
-	
+
+	.header-v1 .topbar .widget .pull-right div a {
+		padding-right: 12px;
+	}
 	.header-v1 .topbar .widget .pull-right>div:first-child {
 	    font-family: 'Poppins', sans-serif;
 	    font-weight: 500;
@@ -12664,7 +12675,7 @@
 	.grd-award-1 {
 	    background: url(../images/bg/most-bg.jpg) 0 0 no-repeat;
 	    background-size: cover;
-	    padding: 100px 0 150px;
+	    padding: 40px 0;
 	}
 	
 	.request-form-1 {
@@ -13215,4 +13226,24 @@
 	.backtotop:hover {
 	    background: #9cc212;
 	    color: #fff
+	}
+
+	.primary-sidebar.col-sm-12.col-md-4 div li h2{
+		font-size: 24px;
+	}
+
+	#searchform input{
+		border-radius: 5px;
+		padding: 10px;
+		height: 45px;
+	}
+	#searchsubmit{
+		padding: 17px;
+	}
+
+
+
+	.wpcf7-not-valid-tip,
+	.wpcf7-response-output{
+		position: absolute !important;
 	}

@@ -16,16 +16,16 @@ if (! defined('ABSPATH')){
       <div class="col-sm-6 col-md-3  portfolio-item">
         <div class="content-item">
           <div class="entry-header">
-            <a href="#" class="entry-thumbnail">
+            <a href="<?php the_permalink(); ?>" class="entry-thumbnail">
               <img alt="Communal Garden" src="<?php echo get_the_post_thumbnail_url( $gallery->ID, 'full' ); ?>"</a>
           </div>
           <div class="entry-content">
-            <div class="entry-title"><a href="#"><h3 class="title"><?php echo $gallery -> post_title;?></h3></a>
-              <div class="entry-meta"><a class="category" href="#">Lawn Care</a></div>
+            <div class="entry-title"><a href="<?php the_permalink(); ?>"><h3 class="title"><?php echo $gallery -> post_title;?></h3></a>
+              <div class="entry-meta"><a class="category" href="#"><?php echo wp_trim_words($gallery -> post_excerpt, '10' );?></a></div>
             </div>
             <div class="readmore">
-              <a href="#" class="entry-read-more">
-                <div class="read-more"><span class="svg-icon"><i class="flaticon-right"></i></span> Read more</div>
+              <a href="<?php the_permalink(); ?>" class="entry-read-more">
+                <div class="read-more"><span class="svg-icon"><i class="flaticon-right"></i></span> Дізнатись більше...</div>
               </a>
             </div>
           </div>
@@ -33,8 +33,6 @@ if (! defined('ABSPATH')){
       </div>
       <?php endforeach; ?>
     </div>
-    <div class="grd-button-group grd-align-center">
-      <a href="#" class="grd-button hidden-xs hover-1"><span>View More</span></a>
-    </div>
+	  <?php get_template_part('template-parts/buttons/button_viev_more'); ?>
   </div>
 </div>

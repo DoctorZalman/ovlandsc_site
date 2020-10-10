@@ -97,14 +97,6 @@ get_header();
     </div>
 
     <!--contact form end-->
-    <!--google map-->
-    <div class="google-map-area">
-      <div class="google-map" id="contact-google-map" data-map-lat="42.36365" data-map-lng="-87.882526" data-icon-path="images/icon/marker-1.png" data-map-title="Chester" data-map-zoom="13" data-markers='{
-							"marker-1": [42.36365, -87.882526, "<h4>GRD</h4><p>54 N. Lakewood Avenue, IL 60640</p>"]
-						}'>
-      </div>
-    </div>
-    <!--google map end-->
   </div>
 
 <?php get_footer();?>

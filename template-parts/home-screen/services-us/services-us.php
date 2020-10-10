@@ -38,7 +38,7 @@ if (! defined('ABSPATH')){
             <img src="<?php echo get_the_post_thumbnail_url( $services->ID, 'full' ); ?>" alt="img" width="600" height="324">
             <a href="#" class="hover"></a>
           </div>
-          <div class="entry-content"><?php echo $services -> post_excerpt;?></div>
+          <div class="entry-content"><?php echo wp_trim_words($services -> post_excerpt, '10' );?></div>
         </div>
       </div>
       <?php
