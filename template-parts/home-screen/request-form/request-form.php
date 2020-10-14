@@ -6,7 +6,7 @@ if (! defined('ABSPATH')){
 <div class="request-form-1 wpcf7">
   <div class="container">
     <div class="row">
-      <div class="col-md-9 pull-right">
+      <div class="col-md-12 pull-right">
         <div class="grd-section-title  grd_title-type-2 margbtm40">
           <h3 class="title">Зацікавились? - залиште Ваші контакти</h3>
           <div class="desc">

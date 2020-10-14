@@ -5535,7 +5535,6 @@
 	.dl_testimorial_carousel .slick-current .style-1 .box-text {
 	    left: 50%;
 	}
-	
 	.dl_testimorial_carousel .style-1 .box-avatar .address {
 	    margin-bottom: 5px
 	}
@@ -12679,7 +12678,7 @@
 	}
 	
 	.request-form-1 {
-	    background: url(../images/bg/contact-form-home.jpg) center center no-repeat;
+	    /*background: url(../images/bg/contact-form-home.jpg) center center no-repeat;*/
 	    background-size: cover;
 	    padding: 100px 0 120px;
 	}
@@ -13243,7 +13242,15 @@
 
 
 
-	.wpcf7-not-valid-tip,
-	.wpcf7-response-output{
-		position: absolute !important;
+	/*.wpcf7-not-valid-tip,*/
+	/*.wpcf7-response-output{*/
+	/*	position: absolute !important;*/
+	/*}*/
+
+	/*.row.col-md-9.pull-right {*/
+	/*	width: unset;*/
+	/*}*/
+
+	.grd-portfolio-shortcode.portfolio-item.content-item.entry-header.entry-thumbnail img {
+		height: 100%;
 	}

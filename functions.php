@@ -124,6 +124,16 @@ function getGallery() {
 	]);
 };
 
+function getTestimonial() {
+	return get_posts([
+		'numberposts' => -1,
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'post_status' => 'publish',
+		'post_type' => 'testimonial',
+	]);
+};
+
 function getAllgallery() {
 	return get_posts([
 		'numberposts' => -1,
@@ -226,6 +236,32 @@ function register_post_types() {
 		],
 		'public' => true,
 		'menu_position' => 6,
+		'menu_icon' => 'dashicons-images-alt',
+		'hierarchical' => true,
+		'supports' => ['title', 'excerpt', 'thumbnail'],
+		'has_archive' => true,
+		'rewrite' => true,
+		'query_var' => true,
+		'show_in_rest' => true
+	]);
+
+	register_post_type('testimonial', [
+		'labels' => [
+			'name' => 'Відгуки',
+			'singular_name' => 'Відгуки',
+			'add_new' => 'Додати відгук',
+			'add_new_item' => 'Додавання відгуку',
+			'edit_item' => 'Редагування ',
+			'new_item' => 'Новий відгук',
+			'view_item' => 'Дивитись відгук',
+			'search_items' => 'Шукати відгук',
+			'not_found' => 'Не знайдено',
+			'not_found_in_trash' => 'Не знайдено в корзині',
+			'parent_item_colon' => '',
+			'menu_name' => 'Відгуки',
+		],
+		'public' => true,
+		'menu_position' => 9,
 		'menu_icon' => 'dashicons-images-alt',
 		'hierarchical' => true,
 		'supports' => ['title', 'excerpt', 'thumbnail'],

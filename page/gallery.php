@@ -14,7 +14,7 @@ get_header();
 				  <div class="portfolio-item  col-sm-6 col-xs-12 col-md-3  item-full-width lawn-care">
 					<div class="content-item">
 						<div class="entry-header">
-							<a href="#" class="entry-thumbnail"><?php echo get_the_post_thumbnail( $allGallery->ID,'full' ); ?></a>
+							<a href="#" class="entry-thumbnail"><?php echo get_the_post_thumbnail( $allGallery->ID,'full' );?></a>
 							<a href="#" class="entry-title"><h3 class="title"><?php echo esc_html($allGallery->post_title); ?></h3> </a>
 						</div>
 						<div class="entry-content">
@@ -34,5 +34,7 @@ get_header();
       <?php endforeach; ?>
     </div>
 	</div>
+  </div>
+  <!--End pagewrapper-->
 	<!-- projects end -->
 <?php get_footer(); ?>

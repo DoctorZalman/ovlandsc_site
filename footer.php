@@ -105,8 +105,7 @@ wp_footer();
   </div>
 </footer>
 <!-- copyright end-->
-</div>
-<!--End pagewrapper-->
+
 
 <!--primary-mobile-nav-->
 <div class="primary-mobile-nav" id="primary-mobile-nav" role="navigation">

@@ -7,7 +7,7 @@ get_header();
 <?php get_template_part('template-parts/title/title'); ?>
 
   <!--contact form-->
-  <div class="contactpage">
+  <div class="contactpage pagepadding">
     <div class="container">
       <div class="grd-section-title  grd_title-type-2 margbtm20">
         <h3 class="title  fsize30">Hi, here you can reach out to us for any inquiry</h3>
@@ -59,38 +59,39 @@ get_header();
           </div>
         </div>
         <div class="col-sm-7">
-          <form method="post" action="ajax/mail.php" class="wpcf7-form" id="contact-form" novalidate="novalidate">
-            <div class="contactpage-form">
-              <p>Feel free to ask any landscaping or gardening questions over the phone, or get in touch via our contact form below.</p>
-              <div class="row">
-                <div class="col-md-6 col-xs-12 col-sm-12">
-                  <p>
-                    <input name="name" value="" size="40" placeholder="Your Name*" type="text">
-                  </p>
-                </div>
-                <div class="col-md-6 col-xs-12 col-sm-12">
-                  <p>
-                    <input name="email" value="" size="40" placeholder="Email Address*" type="email">
-                  </p>
-                </div>
-                <div class="col-md-12 col-xs-12 col-sm-12">
-                  <p>
-                    <input name="phone" value="" size="40" placeholder="Phone Number" type="text">
-                  </p>
-                </div>
-                <div class="col-md-12 col-xs-12 col-sm-12 mf-textarea-field">
-                  <p>
-                    <textarea name="message" cols="40" rows="4" placeholder="Enter Your Message..."></textarea>
-                  </p>
-                </div>
-                <div class="text-center mf-submit col-md-12 col-xs-12 col-sm-12">
-                  <button type="submit" class="btn-style-two">Send Message Us</button>
-                </div>
-              </div>
-            </div>
-            <div class="contact-form-message"></div>
-            <div id="loading" class="form-loader"><img src="<?php echo get_template_directory_uri();?>/images/ajax-loader.png" alt="loading"></div>
-          </form>
+          <?php echo do_shortcode('[contact-form-7 id="206" title="Форма (контакти)]'); ?>
+<!--          <form method="post" action="ajax/mail.php" class="wpcf7-form" id="contact-form" novalidate="novalidate">-->
+<!--            <div class="contactpage-form">-->
+<!--              <p>Feel free to ask any landscaping or gardening questions over the phone, or get in touch via our contact form below.</p>-->
+<!--              <div class="row">-->
+<!--                <div class="col-md-6 col-xs-12 col-sm-12">-->
+<!--                  <p>-->
+<!--                    <input name="name" value="" size="40" placeholder="Your Name*" type="text">-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--                <div class="col-md-6 col-xs-12 col-sm-12">-->
+<!--                  <p>-->
+<!--                    <input name="email" value="" size="40" placeholder="Email Address*" type="email">-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--                <div class="col-md-12 col-xs-12 col-sm-12">-->
+<!--                  <p>-->
+<!--                    <input name="phone" value="" size="40" placeholder="Phone Number" type="text">-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--                <div class="col-md-12 col-xs-12 col-sm-12 mf-textarea-field">-->
+<!--                  <p>-->
+<!--                    <textarea name="message" cols="40" rows="4" placeholder="Enter Your Message..."></textarea>-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--                <div class="text-center mf-submit col-md-12 col-xs-12 col-sm-12">-->
+<!--                  <button type="submit" class="btn-style-two">Send Message Us</button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="contact-form-message"></div>-->
+<!--            <div id="loading" class="form-loader"><img src="--><?php //echo get_template_directory_uri();?><!--/images/ajax-loader.png" alt="loading"></div>-->
+<!--          </form>-->
         </div>
       </div>
 

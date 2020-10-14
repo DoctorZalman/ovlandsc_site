@@ -1309,7 +1309,8 @@
 
 @media(max-width:480px) {
     .dl_testimorial_carousel .style-1 .box-avatar {
-        width: 100%;
+        left: unset !important;
+        width: 100% !important;
         margin: 0;
         position: static;
         -webkit-transform: translateY(0);
@@ -1321,9 +1322,10 @@
         display: none
     }
     .dl_testimorial_carousel .style-1 .box-text {
+        left: unset !important;
         position: static;
         margin-top: 20px;
-        width: 100%;
+        width: 100% !important;
         clear: both
     }
     .dl_testimorial_carousel .style-1 .fix-border {
