@@ -30,12 +30,12 @@ if (! defined('ABSPATH')){
       foreach (getServices() as $services) :?>
          <div class="col-lg-4 col-md-4 col-sm-12 <?php echo $i; ?>">
         <div class="grd-image-box-1 icon-theme-light">
-          <div class="entry-title"><a href="#"><h4 class="title"><?php echo $services -> post_title;?></h4></a></div>
+          <div class="entry-title"><a href="<?php the_permalink(); ?>"><h4 class="title"><?php echo $services -> post_title;?></h4></a></div>
           <div class="entry-icon">
             <span class="svg-icon"><i class="flaticon-hills"></i></span>
           </div>
           <div class="entry_thumbnail">
-            <img src="<?php echo get_the_post_thumbnail_url( $services->ID, 'full' ); ?>" alt="img" width="600" height="324">
+            <img src="<?php echo get_the_post_thumbnail_url( $services->ID, 'our_services' ); ?>" alt="img" width="600" height="324">
             <a href="#" class="hover"></a>
           </div>
           <div class="entry-content"><?php echo wp_trim_words($services -> post_excerpt, '10' );?></div>

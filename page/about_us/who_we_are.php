@@ -20,6 +20,8 @@ defined( 'ABSPATH' ) || exit;
 			</div>
 			<div class="col-md-6 col-sm-6 col-xs-12">
 				<div class="aboutweimg">
+<!--			--><?php //$who_we_are = get_field('who_we_are_img', the_ID());?>
+<!--          <img src="--><?php //echo ($who_we_are['who_we_are_img']['sizes']['who_we_are']); ?><!--" alt="img" />-->
           <img src="<?php echo get_template_directory_uri();?>/images/resources/banner-1.png" alt="" />
         </div>
 			</div>

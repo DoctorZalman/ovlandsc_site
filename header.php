@@ -20,7 +20,7 @@
     <div class="container">
       <div class="row menu-row">
         <div class="site-logo col-lg-3 col-xs-9">
-          <a href="<?php echo home_url('');?>" class="logo"><img src="<?php echo get_template_directory_uri();?>/images/14-01.svg" alt="GRD" class="logo"></a>
+          <a href="<?php echo home_url('');?>" class="logo"><img src="<?php echo get_template_directory_uri();?>/images/logo.png" alt="GRD" class="logo"></a>
         </div>
         <div class="header-content col-lg-9 col-md-12 col-xs-12 pull-right">
           <!-- top bar -->
@@ -55,7 +55,7 @@
 					<?php endforeach; ?>
                 </div>
               </div>
-              <div class="menu-block-right"></div>
+              <div class="menu-right-block"></div>
             </div>
           </div>
           <!-- top bar -->

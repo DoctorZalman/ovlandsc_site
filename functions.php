@@ -7,32 +7,54 @@ add_action( 'init', 'register_post_types');
 add_theme_support('post-thumbnails'); // можливість додавати картинки в пости і т.д
 //add_action( 'widgets_init', 'widgets_zones' );
 add_action( 'widgets_init', 'blog_single_right' );
+// image size on home page
+add_image_size( 'main_slider', 1920, 744, true);
+add_image_size( 'our_services', 600, 324, true);
+add_image_size( 'our_blogs', 600, 340, true);
+//  img size - about us page
+add_image_size( 'who_we_are', 570, 410, true); // need check!!
+add_image_size( 'our_history', 400, 453, true);
+add_image_size( 'our_clients', 255, 50, true);
+//  img size and services page - same size like gallery (project)
+
+// our project
+add_image_size( 'our_project', 485, 592, true);
+
+
+// single post size
+add_image_size( 'single_post_page', 1000, 600, true);
+
+// blog page
+add_image_size( 'blog_post_page', 750, 400, true);
+
+add_image_size( 'project_single_post', 485, 404, true);
+add_image_size( 'project_single_post_slider', 1024, 536, true);
 
 function my_scripts_and_styles() {
 //  wp_deregister_script('jquery');
 //  wp_enqueue_script('jquery-1.12.4', get_template_directory_uri().'/js/jquery-1.12.4.min.js', [], null, true);
-  wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.min.js', [], null, true);
-  wp_enqueue_script('fancybox', get_template_directory_uri().'/js/jquery.fancybox.pack.js', [], null, true);
-  wp_enqueue_script('fancybox-media', get_template_directory_uri().'/js/jquery.fancybox-media.js', [], null, true);
-  wp_enqueue_script('isotope', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', [], null, true);
+//  wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.min.js', [], null, true);
+//  wp_enqueue_script('fancybox', get_template_directory_uri().'/js/jquery.fancybox.pack.js', [], null, true);
+//  wp_enqueue_script('fancybox-media', get_template_directory_uri().'/js/jquery.fancybox-media.js', [], null, true);
+//  wp_enqueue_script('isotope', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', [], null, true);
   wp_enqueue_script('slick', get_template_directory_uri().'/js/slick.js', [], null, true);
-  wp_enqueue_script('jquery.countTo', get_template_directory_uri().'/js/jquery.countTo.js', [], null, true);
-  wp_enqueue_script('validate', get_template_directory_uri().'/js/validate.js', [], null, true);
+//  wp_enqueue_script('jquery.countTo', get_template_directory_uri().'/js/jquery.countTo.js', [], null, true);
+//  wp_enqueue_script('validate', get_template_directory_uri().'/js/validate.js', [], null, true);
 //  //[if lt IE 9]
 //  wp_enqueue_script('validate', 'https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js', [], null, true);
 //  wp_enqueue_script('respond', get_template_directory_uri().'/js/respond.js', [], null, true);
 
   wp_enqueue_script('themepunch', get_template_directory_uri().'/js/revolution/jquery.themepunch.tools.min.js', [], null, true);
   wp_enqueue_script('revolution', get_template_directory_uri().'/js/revolution/jquery.themepunch.revolution.min.js', [], null, true);
-  wp_enqueue_script('actions', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.actions.min.js', [], null, true);
-  wp_enqueue_script('carousel', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.carousel.min.js', [], null, true);
-  wp_enqueue_script('kenburn', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.kenburn.min.js', [], null, true);
-  wp_enqueue_script('layeranimation', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.layeranimation.min.js', [], null, true);
-  wp_enqueue_script('migration', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.migration.min.js', [], null, true);
-  wp_enqueue_script('navigation', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.navigation.min.js', [], null, true);
-  wp_enqueue_script('parallax', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.parallax.min.js', [], null, true);
-  wp_enqueue_script('slideanims', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.slideanims.min.js', [], null, true);
-  wp_enqueue_script('video', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.video.min.js', [], null, true);
+//  wp_enqueue_script('actions', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.actions.min.js', [], null, true);
+//  wp_enqueue_script('carousel', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.carousel.min.js', [], null, true);
+//  wp_enqueue_script('kenburn', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.kenburn.min.js', [], null, true);
+//  wp_enqueue_script('layeranimation', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.layeranimation.min.js', [], null, true);
+//  wp_enqueue_script('migration', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.migration.min.js', [], null, true);
+//  wp_enqueue_script('navigation', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.navigation.min.js', [], null, true);
+//  wp_enqueue_script('parallax', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.parallax.min.js', [], null, true);
+//  wp_enqueue_script('slideanims', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.slideanims.min.js', [], null, true);
+//  wp_enqueue_script('video', get_template_directory_uri().'/js/revolution/extensions/revolution.extension.video.min.js', [], null, true);
   wp_enqueue_script('scripts', get_template_directory_uri().'/js/scripts.min.js', [], null, true);
   wp_enqueue_script('script', get_template_directory_uri().'/js/script.js', [], null, true);
 
@@ -41,18 +63,16 @@ function my_scripts_and_styles() {
   wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/bootstrap.css');
   wp_enqueue_style('font-awesome', get_template_directory_uri().'/css/font-awesome.css');
   wp_enqueue_style('flaticon', get_template_directory_uri().'/css/flaticon.css');
-  wp_enqueue_style('animate', get_template_directory_uri().'/css/animate.css');
+//  wp_enqueue_style('animate', get_template_directory_uri().'/css/animate.css');
   wp_enqueue_style('slick', get_template_directory_uri().'/css/slick.css');
   wp_enqueue_style('slick-theme', get_template_directory_uri().'/css/slick-theme.css');
-  wp_enqueue_style('fancybox', get_template_directory_uri().'/css/jquery.fancybox.css');
+//  wp_enqueue_style('fancybox', get_template_directory_uri().'/css/jquery.fancybox.css');
   wp_enqueue_style('settings', get_template_directory_uri().'/css/revolution/settings.css');
-  wp_enqueue_style('layers', get_template_directory_uri().'/css/revolution/layers.css');
-  wp_enqueue_style('navigation', get_template_directory_uri().'/css/revolution/navigation.css');
+//  wp_enqueue_style('layers', get_template_directory_uri().'/css/revolution/layers.css');
+//  wp_enqueue_style('navigation', get_template_directory_uri().'/css/revolution/navigation.css');
   wp_enqueue_style('style', get_template_directory_uri().'/css/style.css');
 }
 
-//register menus
-//add_action( 'after_setup_theme', 'register_menus');
 function blog_single_right() {
 	register_sidebar([
 		'name'=> 'blog single right',
@@ -62,7 +82,8 @@ function blog_single_right() {
 
 register_nav_menus([
   'nav_menu' => 'Головне меню',
-  'footer_menu' => 'Footer menu'
+  'footer_menu' => 'Footer menu',
+  'mobile_menu' => 'mobile menu'
 ]);
 
 function getSliders () {
@@ -91,6 +112,14 @@ function getBlogs() {
 		'post_status' => 'publish',
 		'post_type' => 'post',
 	]);
+};
+
+function getAllBlogs() {
+  return new WP_Query([
+	  'posts_per_page'=> 3,
+    'post_type'=>'post',
+    'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
+  ]);
 };
 
 
@@ -261,7 +290,7 @@ function register_post_types() {
 			'menu_name' => 'Відгуки',
 		],
 		'public' => true,
-		'menu_position' => 9,
+		'menu_position' => 7,
 		'menu_icon' => 'dashicons-images-alt',
 		'hierarchical' => true,
 		'supports' => ['title', 'excerpt', 'thumbnail'],
@@ -287,7 +316,7 @@ function register_post_types() {
 			'menu_name' => 'Історія',
 		],
 		'public' => true,
-		'menu_position' => 7,
+		'menu_position' => 8,
 		'menu_icon' => 'dashicons-clock',
 		'hierarchical' => true,
 		'supports' => ['title', 'excerpt', 'thumbnail'],
@@ -312,7 +341,7 @@ function register_post_types() {
 		  'menu_name' => 'Досвід',
 		],
 		'public' => true,
-		'menu_position' => 7,
+		'menu_position' => 9,
 		'menu_icon' => 'dashicons-universal-access',
 		'hierarchical' => true,
 		'supports' => ['title'],
@@ -338,8 +367,8 @@ if (function_exists ('acf_add_options_page')) {
 	]);
 
 	acf_add_options_sub_page([
-		'page_title' => 'Блок контактів',
-		'menu_title' => 'Contacts',
+		'page_title' => 'Блок футеру',
+		'menu_title' => 'Footer',
 		'parent_slug' => 'theme-general-settings',
 	]);
 
@@ -373,6 +402,7 @@ post_status = 'publish'
 	}
 	return $output;
 }
+// comment
 
 function format_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment; ?>
@@ -389,74 +419,4 @@ function format_comment($comment, $args, $depth) {
 	</li>
 <?php };
 
-//function the_breadcrumb(){
-//
-//	// получаем номер текущей страницы
-//	$pageNum = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-//
-//	$separator = ' &raquo; '; //  »
-//
-//	// если главная страница сайта
-//	if( is_front_page() ){
-//
-//		if( $pageNum > 1 ) {
-//			echo '<a href="' . site_url() . '">Главная</a>' . $separator . $pageNum . '-я страница';
-//		} else {
-//			echo 'Вы находитесь на главной странице';
-//		}
-//
-//	} else { // не главная
-//
-//		echo '<a href="' . site_url() . '">Главная</a>' . $separator;
-//
-//
-//		if( is_single() ){ // записи
-//
-//			the_category(', '); echo $separator; the_title();
-//
-//		} elseif ( is_page() ){ // страницы WordPress
-//
-//			the_title();
-//
-//		} elseif ( is_category() ) {
-//
-//			single_cat_title();
-//
-//		} elseif( is_tag() ) {
-//
-//			single_tag_title();
-//
-//		} elseif ( is_day() ) { // архивы (по дням)
-//
-//			echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $separator;
-//			echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a>' . $separator;
-//			echo get_the_time('d');
-//
-//		} elseif ( is_month() ) { // архивы (по месяцам)
-//
-//			echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a>' . $separator;
-//			echo get_the_time('F');
-//
-//		} elseif ( is_year() ) { // архивы (по годам)
-//
-//			echo get_the_time('Y');
-//
-//		} elseif ( is_author() ) { // архивы по авторам
-//
-//			global $author;
-//			$userdata = get_userdata($author);
-//			echo 'Опубликовал(а) ' . $userdata->display_name;
-//
-//		} elseif ( is_404() ) { // если страницы не существует
-//
-//			echo 'Ошибка 404';
-//
-//		}
-//
-//		if ( $pageNum > 1 ) { // номер текущей страницы
-//			echo ' (' . $pageNum . '-я страница)';
-//		}
-//
-//	}
-//
-//}
+

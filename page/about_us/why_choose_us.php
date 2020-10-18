@@ -8,30 +8,14 @@ defined( 'ABSPATH' ) || exit;
     <div class="row">
       <div class="col-md-6 col-sm-12">
         <div class="grd-section-title sc-dark  grd_title-type-2 margbtm40">
-          <h3 class="title">Industry Covered</h3>
+          <h3 class="title"><?php the_field('why_choose_us_title', '244'); ?></h3>
           <div class="desc">
-            <p>We Designed for Commercial &amp; Non Commercial Industries.</p>
-            <p>Denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness pursue work encounter consequences that are extremely.</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6 coverdimg">
-            <img src="<?php echo get_template_directory_uri();?>/images/resources/industry-img.jpg" alt="">
-          </div>
-          <div class="col-sm-6">
-            <div class="grd-list icon-theme-dark">
-              <h3 class="title">WE DESIGNED FOR</h3>
-              <ul>
-                <li><a href="#"><span class="fa fa-leaf svg-icon"></span> Commercial</a></li>
-                <li><a href="#"><span class="fa fa-leaf svg-icon"></span> Residential</a></li>
-                <li><a href="#"><span class="fa fa-leaf svg-icon"></span> Sports</a></li>
-                <li><a href="#"><span class="fa fa-leaf svg-icon"></span> Health &amp; Medical</a></li>
-              </ul>
-            </div>
+            <p><?php the_field('why_choose_us_desc', '244'); ?></p>
           </div>
         </div>
       </div>
       <div class="col-md-6 col-lg-5 col-lg-offset-1 col-sm-12">
+	      <?php $why_choose = get_field('why_choose_us_options', '244');?>
         <div class="icon-box-list">
           <div class="col-xs-12 icon-box-list-items grd-icon-box-list-1 icon-theme-light ">
             <div class="icon-box-wrapter">
@@ -39,10 +23,10 @@ defined( 'ABSPATH' ) || exit;
                 <div class="icon-content"><span class="svg-icon"><i class="flaticon-clock"></i></span></div>
               </a>
               <a href="#" class="emtry-title">
-                <h3 class="title" title="On Time, Every Time">On Time, Every Time</h3>
+                <h3 class="title" title="On Time, Every Time"><?php echo wp_trim_words($why_choose ['why_choose_us_options_1_title'], '15'); ?></h3>
               </a>
               <div class="content">
-                <div class="descreption">Must explain you how this idea of works denouncing pleasure.</div>
+                <div class="descreption"><?php echo wp_trim_words($why_choose ['why_choose_us_options_1_desc'], '15'); ?></div>
               </div>
             </div>
           </div>
@@ -52,10 +36,10 @@ defined( 'ABSPATH' ) || exit;
                 <div class="icon-content"><span class="svg-icon"><i class="flaticon-love"></i></span></div>
               </a>
               <a href="#" class="emtry-title">
-                <h3 class="title" title="Public Liability Insurance">Public Liability Insurance</h3>
+                <h3 class="title" title="Public Liability Insurance"><?php echo wp_trim_words($why_choose ['why_choose_us_options_2_title'], '15'); ?></h3>
               </a>
               <div class="content">
-                <div class="descreption">Denouncing pleasure &amp; praising pain give you a complete account.</div>
+                <div class="descreption"><?php echo wp_trim_words($why_choose ['why_choose_us_options_2_desc'], '15'); ?></div>
               </div>
             </div>
           </div>
@@ -65,16 +49,17 @@ defined( 'ABSPATH' ) || exit;
                 <div class="icon-content"><span class="svg-icon"><i class="flaticon-house"></i></span></div>
               </a>
               <a href="#" class="emtry-title">
-                <h3 class="title" title="Tailor-Made Designs">Tailor-Made Designs</h3>
+                <h3 class="title" title="Tailor-Made Designs"><?php echo wp_trim_words($why_choose ['why_choose_us_options_3_title'], '15'); ?></h3>
               </a>
               <div class="content">
-                <div class="descreption">Praising pain was born and we will give the system expound.</div>
+                <div class="descreption"><?php echo wp_trim_words($why_choose ['why_choose_us_options_3_desc'], '15'); ?></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+
   </div>
+</div>
 </div>
 <!--why choose us end-->

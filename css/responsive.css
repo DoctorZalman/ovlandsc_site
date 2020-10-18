@@ -819,62 +819,6 @@
         display: inline-block;
         margin-bottom: 10px
     }
-    .woocommerce .woocommerce-products-header,
-    .woocommerce-page .woocommerce-products-header,
-    .woocommerce .woocommerce-result-count,
-    .woocommerce-page .woocommerce-result-count {
-        display: none
-    }
-    .woocommerce ul.products li.product,
-    .woocommerce-page ul.products li.product {
-        width: 100% !important
-    }
-    .woocommerce div.product div.product div.images,
-    .woocommerce-page div.product div.product div.images,
-    .woocommerce #content div.product div.images,
-    .woocommerce-page #content div.product div.images,
-    .woocommerce div.product div.product div.summary,
-    .woocommerce-page div.product div.product div.summary,
-    .woocommerce #content div.product div.summary,
-    .woocommerce-page #content div.product div.summary {
-        width: 100%;
-        margin-bottom: 30px
-    }
-    .woocommerce .cart-collaterals .cart_totals,
-    .woocommerce-page .cart-collaterals .cart_totals {
-        width: 100%
-    }
-    .woocommerce table.shop_table tr th,
-    .woocommerce-page table.shop_table tr th,
-    .woocommerce table.shop_table tr td,
-    .woocommerce-page table.shop_table tr td {
-        padding: 10px
-    }
-    .woocommerce table.shop_table tr .product-price,
-    .woocommerce-page table.shop_table tr .product-price,
-    .woocommerce table.shop_table tr .product-subtotal,
-    .woocommerce-page table.shop_table tr .product-subtotal {
-        display: none
-    }
-    .woocommerce table.shop_table .show-mobile,
-    .woocommerce-page table.shop_table .show-mobile {
-        font-size: 14px;
-        font-weight: 400
-    }
-    .woocommerce .col2-set .col-1,
-    .woocommerce-page .col2-set .col-1 {
-        width: 100%
-    }
-    .woocommerce .woocommerce-MyAccount-navigation,
-    .woocommerce-page .woocommerce-MyAccount-navigation,
-    .woocommerce .woocommerce-MyAccount-content,
-    .woocommerce-page .woocommerce-MyAccount-content {
-        width: 100%
-    }
-    .woocommerce .primary-sidebar,
-    .woocommerce-page .primary-sidebar {
-        margin-top: 50px
-    }
     .error404.header-v1 .site-content {
         padding-top: 100px
     }
@@ -936,7 +880,8 @@
     }
     .grd-portfolio-shortcode .portfolio-item {
         padding: 0 5px;
-        margin: 5px 0
+        margin: 5px 0;
+        width: 50%;
     }
     .grd-portfolio-shortcode .portfolio-cats-filters #filters {
         height: auto
@@ -1071,7 +1016,11 @@
     }
     .grd-image-box-1 .entry-icon {
         position: static;
-        margin-bottom: 15px
+        margin-bottom: 15px;
+        width: 50px!important;
+        height: 50px!important;
+        right: 20px!important;
+
     }
     .grd-image-box-1 .entry-title .title {
         padding-bottom: 25px
@@ -1190,7 +1139,11 @@
     .counter-3 .dl_counter .border-right {
         display: none;
     }
+    .count_p_b {
+        padding-top: 15px;
+    }
 }
+
 
 @media(max-width:600px) {
     .grd-posts article {

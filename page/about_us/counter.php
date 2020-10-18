@@ -5,9 +5,9 @@ defined( 'ABSPATH' ) || exit;
 <!--counters-counters -->
 <div class="counter-5">
   <div class="container">
-    <div class="row">
+    <div class="rows">
       <?php foreach (getCounter() as $counter) : ?>
-      <div class="col-sm-6 col-md-3">
+      <div class="col-sm-6 col-md-3 count_p_b">
         <div class="dl_counter style-1 counter-value">
           <div class="border"></div>
           <div class="content">

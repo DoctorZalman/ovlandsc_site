@@ -12,9 +12,9 @@ if (! defined('ABSPATH')){
       foreach (getSliders() as $slider) :
 
 	    ?>
-      <li data-index="rs-<?php echo $i; ?>" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="<?php echo get_the_post_thumbnail_url( $slider -> ID, 'full' );?>" data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off" data-title="Make an Impact">
+      <li data-index="rs-<?php echo $i; ?>" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="<?php echo get_the_post_thumbnail_url( $slider -> ID, 'main_slider' );?>" data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7" data-saveperformance="off" data-title="Make an Impact">
         <!-- MAIN IMAGE -->
-        <img src="<?php echo get_the_post_thumbnail_url( $slider -> ID, 'full' );?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+        <img src="<?php echo get_the_post_thumbnail_url( $slider -> ID, 'main_slider' );?>" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
         <!-- LAYERS -->
 
         <!-- LAYER NR. 1 -->

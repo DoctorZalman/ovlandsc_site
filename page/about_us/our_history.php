@@ -18,10 +18,10 @@ defined( 'ABSPATH' ) || exit;
 					<div class="hook"><span></span><span></span></div>
               <h4><?php the_field('company_year', $our_history->ID); ?></h4>
           <div class="box-img">
-	          <?php echo get_the_post_thumbnail( $our_history->ID,'full' ); ?>
+	          <?php echo get_the_post_thumbnail( $our_history->ID,'our_history' ); ?>
 						<div class="overlay">
 							<h2><?php echo esc_html($our_history->post_title); ?></h2>
-							<p><?php echo wp_trim_words($our_history -> post_excerpt, '10' );?></p>
+							<p><?php echo wp_trim_words($our_history -> post_excerpt, '20' );?></p>
 						</div>
 					</div>
 				</div>

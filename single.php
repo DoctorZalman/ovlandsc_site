@@ -15,7 +15,7 @@ the_post();
           <div class="blog-details">
             <div class="entry-header">
               <div class="entry-thumbnail margbtm30">
-                <?php the_post_thumbnail( 'full', 'photo' ); ?>
+                <?php the_post_thumbnail( 'single_post_page', 'photo' ); ?>
               </div>
               <h1 class="entry-title">
                 <a href="#"><?php the_title(); ?></a>

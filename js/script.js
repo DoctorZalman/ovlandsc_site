@@ -839,58 +839,7 @@
 	   Contact Form Validation and Ajax
 	   ========================================================================== */
 
-	$('#contact-form').validate({
-		rules: {
-			name: {
-				required: true
-			},
-			email: {
-				required: true,
-				minlength: 5,
-				email: true
-			},
-			phone: {
-				required: true
-			},
-			message: {
-				required: true,
-				minlength: 10
-			}
-		},
-		messages: {
-			name: "Please specify your name",
-			email: {
-				required: "We need your email address to contact you",
-				email: "Your email address must be in the format of name@domain.com"
-			},
-			phone: "Please specify your phone number",
-			message: {
-				required: "Please specify your message",
-				minlength: jQuery.validator.format("At least {0} characters required!")
-			}
-		},
-		submitHandler: function(e) {
-			var $t = $(e);
-			$.ajax({
-				type: 'POST',
-				url: $t.attr('action'),
-				data: $t.serialize(),
-				beforeSend: function() {
-					$("#loading").show();
-				},
-				complete: function() {
-					$("#loading").hide();
-				},
-				success: function(res) {
-					$('.contact-form-message').show().html(res).delay(10000).fadeOut("slow");
-					$('input[name=\'name\']').val('');
-					$('input[name=\'email\']').val('');
-					$('input[name=\'phone\']').val('');
-					$('textarea[name=\'message\']').val('');
-				}
-			});
-		}
-	});			
+
 
 
 
