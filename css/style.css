@@ -6627,7 +6627,7 @@
 	    display: -webkit-flex;
 	    display: -moz-box;
 	    display: -ms-flexbox;
-	    display: flex
+	    display: flex;
 	}
 	
 	.main-nav {
@@ -7694,7 +7694,7 @@
  ***/
 	
 	.primary-mobile-nav {
-	    width: 340px;
+	    width: 220px;
 	    -webkit-transition: .4s;
 	    transition: .4s;
 	    background-color: #fff;
@@ -7709,7 +7709,7 @@
 	}
 	
 	.primary-mobile-nav .mobile-nav-content {
-	    padding: 50px 30px
+	    padding: 50px 30px 0 30px
 	}
 	
 	.primary-mobile-nav .close-canvas-mobile-panel {
@@ -7930,10 +7930,10 @@
 	    margin-top: 1.6em
 	}
 	
-	.container {
-	    padding-left: 0;
-	    padding-right: 0
-	}
+	/*.container {*/
+	/*    padding-left: 0;*/
+	/*    padding-right: 0*/
+	/*}*/
 	
 	.site-content {
 	    padding-top: 65px;
@@ -7943,6 +7943,21 @@
 	.page-template-template-homepage .site-content,
 	.page-template-template-fullwidth .site-content {
 	    padding: 0
+	}
+	#mobile_header_number, .soc_media{
+		padding: 30px;
+	}
+	#mobile_header_number span {
+		margin: 20px 0;
+	}
+	.soc_media .sfsi_shortcode_container{
+		padding: 10px 0;
+	}
+	#mob_number {
+		padding: 10px 0;
+	}
+	#call_us_mobile_menu {
+		padding: 0 0 10px 0;
 	}
 	/*** 
 
@@ -12070,7 +12085,7 @@
 
  ***/
 	
-	.gallery-1 .grd-button {
+	.grd-button {
 	    color: #9cc212;
 	    border: 2px solid #9cc212;
 	    border-radius: 25px;
@@ -13047,7 +13062,6 @@
 	
 	.footer-widgets .footer-sidebar:last-child {
 	    border: 0;
-	    padding-right: 15px
 	}
 	
 	.footer-widgets .widget_media_image {
@@ -13364,4 +13378,45 @@
 		opacity:1;
 	}
 
-/* media*/
+	.zeus.tparrows {
+		cursor:pointer;
+		min-width:70px;
+		min-height:70px;
+		position:absolute;
+		display:block;
+		z-index:100;
+		border-radius:35px;
+		overflow:hidden;
+		background:rgba(0,0,0,0.10);
+	}
+
+	.zeus.tparrows:before {
+		font-family: "revicons";
+		font-size:20px;
+		color:#fff;
+		display:block;
+		line-height: 70px;
+		text-align: center;
+		z-index:2;
+		position:relative;
+	}
+	.zeus.tparrows.tp-leftarrow:before {
+		content: "\e824";
+	}
+	.zeus.tparrows.tp-rightarrow:before {
+		content: "\e825";
+	}
+
+	.smallMenu {
+		position: fixed;
+		height: 60px;
+		width: 100%;
+		background-color: #4bff1c;
+		top: -60px;
+		z-index: 9999;
+	}
+
+	.smallMenu_active {
+		top: 0;
+		transition: top linear 0.7s;
+	}

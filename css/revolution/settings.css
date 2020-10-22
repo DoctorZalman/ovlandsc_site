@@ -215,9 +215,9 @@ website:   	http://www.themepunch.com
 /*}*/
 
 /* ADDED FOR SLIDELINK MANAGEMENT */
-/*.tp-caption {*/
-/*	z-index:1*/
-/*}*/
+.tp-caption {
+	z-index:1
+}
 
 /*.tp_inner_padding {	*/
 /*	box-sizing:border-box;	*/
@@ -227,30 +227,30 @@ website:   	http://www.themepunch.com
 /*}*/
 
 
-/*.tp-caption {	*/
-/*	-moz-user-select: none;*/
-/*	-khtml-user-select: none;*/
-/*	-webkit-user-select: none;*/
-/*	-o-user-select: none;	*/
-/*	position:absolute;*/
-/*	-webkit-font-smoothing: antialiased !important;*/
-/*}*/
+.tp-caption {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	position:absolute;
+	-webkit-font-smoothing: antialiased !important;
+}
 
 
 
-/*.tp-forcenotvisible,*/
-/*.tp-hide-revslider,*/
-/*.tp-caption.tp-hidden-caption {	*/
-/*	visibility:hidden !important; */
-/*	display:none !important*/
-/*}*/
+.tp-forcenotvisible,
+.tp-hide-revslider,
+.tp-caption.tp-hidden-caption {
+	visibility:hidden !important;
+	display:none !important
+}
 
-/*.rev_slider embed,*/
-/*.rev_slider iframe,*/
-/*.rev_slider object,*/
-/*.rev_slider video {*/
-/*	max-width: none !important*/
-/*}*/
+.rev_slider embed,
+.rev_slider iframe,
+.rev_slider object,
+.rev_slider video {
+	max-width: none !important
+}
 
 
 
@@ -353,14 +353,14 @@ img.tp-slider-alternative-image	{
 
 /*.rs-background-video-layer 		{	position: absolute;top:0px;left:0px; width:100%;height:100%;visibility: hidden;z-index: 0;}*/
 
-/*.tp-caption.coverscreenvideo	{	width:100%;height:100%;top:0px;left:0px;position:absolute;}*/
+.tp-caption.coverscreenvideo	{	width:100%;height:100%;top:0px;left:0px;position:absolute;}
 /*.caption.fullscreenvideo,*/
-/*.tp-caption.fullscreenvideo		{	left:0px; top:0px; position:absolute;width:100%;height:100%}*/
+.tp-caption.fullscreenvideo		{	left:0px; top:0px; position:absolute;width:100%;height:100%}
 
 /*.caption.fullscreenvideo iframe,*/
 /*.caption.fullscreenvideo video,*/
-/*.tp-caption.fullscreenvideo iframe,*/
-/*.tp-caption.fullscreenvideo iframe video	{ width:100% !important; height:100% !important; display: none}*/
+.tp-caption.fullscreenvideo iframe,
+.tp-caption.fullscreenvideo iframe video	{ width:100% !important; height:100% !important; display: none}
 
 /*.fullcoveredvideo video,*/
 /*.fullscreenvideo video				{	background: #000}*/
@@ -397,15 +397,15 @@ img.tp-slider-alternative-image	{
 /*	-o-transition:opacity 300ms ease-out !important;*/
 /*	transition:opacity 300ms ease-out !important;				*/
 /*}*/
-/*.tp-caption .html5vid					{	width:100% !important; height:100% !important;}									*/
+.tp-caption .html5vid					{	width:100% !important; height:100% !important;}
 /*.tp-video-play-button i 				{	width:50px;height:50px; display:inline-block; text-align: center; vertical-align: top; line-height: 50px !important; font-size: 40px !important;}									*/
-/*.tp-caption:hover .tp-video-play-button	{	opacity: 1;}*/
-/*.tp-caption .tp-revstop					{	display:none; border-left:5px solid #fff !important; border-right:5px solid #fff !important;margin-top:15px !important;line-height: 20px !important;vertical-align: top; font-size:25px !important;}*/
+.tp-caption:hover .tp-video-play-button	{	opacity: 1;}
+.tp-caption .tp-revstop					{	display:none; border-left:5px solid #fff !important; border-right:5px solid #fff !important;margin-top:15px !important;line-height: 20px !important;vertical-align: top; font-size:25px !important;}
 /*.videoisplaying .revicon-right-dir		{	display:none}*/
 /*.videoisplaying .tp-revstop				{	display:inline-block}*/
 
 /*.videoisplaying  .tp-video-play-button			{	display:none}*/
-/*.tp-caption:hover .tp-video-play-button 		{ 	display:block}*/
+.tp-caption:hover .tp-video-play-button 		{ 	display:block}
 
 /*.fullcoveredvideo .tp-video-play-button			{	display:none !important}*/
 
@@ -435,7 +435,7 @@ img.tp-slider-alternative-image	{
 /*	display:table;max-width:100%; overflow:hidden;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;*/
 /*}*/
 
-/*.tp-caption:hover .tp-video-controls {	opacity: .9;}*/
+.tp-caption:hover .tp-video-controls {	opacity: .9;}
 
 /*.tp-video-button {*/
 /*	background: rgba(0,0,0,.5);*/
@@ -1218,6 +1218,6 @@ img.tp-slider-alternative-image	{
 /*  z-index: 2000;*/
 /*  white-space: normal;}*/
 /*.hginfo 					   { 	position:absolute;top:-2px;left:-2px;color:#e74c3c;font-size:12px;font-weight:600; background:#000;padding:2px 5px;}*/
-/*.indebugmode .tp-caption:hover { 	border:1px dashed #c0392b !important;}*/
+.indebugmode .tp-caption:hover { 	border:1px dashed #c0392b !important;}
 /*.helpgrid 					   { 	border:2px dashed #c0392b;position:absolute;top:0px;peft:0px;z-index:0 }*/
 /*#revsliderlogloglog				{	padding:15px;color:#fff;position:fixed; top:0px;left:0px;width:200px;height:150px;background:rgba(0,0,0,0.7); z-index:100000; font-size:10px; overflow:scroll;}*/

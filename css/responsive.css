@@ -1142,6 +1142,17 @@
     .count_p_b {
         padding-top: 15px;
     }
+    /*.who_we_pad, .why_cho_pl {*/
+    /*    margin-left: 0!important;*/
+    /*    margin-right: 0!important;*/
+    /*}*/
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    /*.hidden-xs{*/
+    /*    display: unset;*/
+    /*}*/
 }
 
 
