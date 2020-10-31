@@ -1146,10 +1146,10 @@
 	    margin-bottom: 0
 	}
 	
-	.grd-contact-box ul li:nth-child(1),
-	.grd-contact-box ul li:nth-child(2) {
-	    margin-bottom: 40px
-	}
+	/*.grd-contact-box ul li:nth-child(1),*/
+	/*.grd-contact-box ul li:nth-child(2) {*/
+	/*    margin-bottom: 40px*/
+	/*}*/
 	
 	.grd-icon-box {
 	    padding: 41px 25px
@@ -4531,6 +4531,7 @@
 	
 	.dl_timeline .box-timeline .overlay {
 	    position: absolute;
+		width: 100%;
 	    top: 82%;
 	    height: 100%;
 	    background-color: #102e19;
@@ -4540,6 +4541,7 @@
 	}
 	
 	.dl_timeline .box-timeline:hover .overlay {
+		width: 100%;
 	    top: 0;
 	    padding-top: 30%;
 	    -webkit-transition: all .5s;
@@ -10214,7 +10216,7 @@
 	}
 	
 	.contact-pagebox {
-	    padding: 45px 30px 40px;
+	    padding: 45px 30px 28px 40px;
 	    border: 1px solid #ddd;
 	    background: url(../images/resources/contact-bg.jpg) center top no-repeat;
 	}
@@ -10226,7 +10228,6 @@
 	.contact-pagebox {
 	    clear: both;
 	    background-size: cover;
-	    margin-bottom: 30px;
 	}
 	
 	.contactpage-form .error {
@@ -10409,7 +10410,7 @@
 	}
 	
 	.footer-widgets .footer-sidebar {
-	    border-right: 1px solid #213d29;
+	    /*border-right: 1px solid #213d29;*/
 	    padding: 0 2.5em
 	}
 
@@ -10787,4 +10788,13 @@
 
 	h4 {
 		color: unset;
+	}
+	.title_slider, .desc_slider{
+		text-shadow: 4px 10px 6px rgba(0,0,0,0.8);
+	}
+	.contact_adress_name{
+		margin-bottom: 0;
+	}
+	.form_contact_title {
+		display: none;
 	}

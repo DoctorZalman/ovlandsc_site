@@ -1208,6 +1208,9 @@
     h1 {
         font-size: 26px;
     }
+    .form_contact_title{
+        display: block;
+    }
 }
 
 
