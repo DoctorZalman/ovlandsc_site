@@ -443,6 +443,9 @@
     .grd-image-box-1 .entry-icon {
         right: 15px;
     }
+    .contactpage-form {
+        padding: 42px 30px 71px 30px;;
+    }
 }
 
 @media(max-width:991px) {
@@ -1210,6 +1213,12 @@
     }
     .form_contact_title{
         display: block;
+    }
+    .menu-row {
+        padding: 0 10px;
+    }
+    .contactpage-form {
+        padding: 30px 30px;;
     }
 }
 

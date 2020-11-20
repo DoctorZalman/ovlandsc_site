@@ -10028,7 +10028,7 @@
 	}
 	
 	.blog-details .entry-footer {
-	    margin: 70px 0;
+	    margin: 10px 0;
 	}
 	
 	.services-1 {
@@ -10242,7 +10242,7 @@
 	}
 	
 	.contactpage-form {
-	    padding: 42px 30px;
+	    padding: 42px 30px 90px 30px;
 	    border: 1px solid #ddd;
 	}
 	
@@ -10755,7 +10755,7 @@
 		background-color: #fff;
 		top: 0;
 		opacity: 0;
-		z-index: 9999;
+		z-index: -1;
 	}
 
 	.smallMenu .container {
@@ -10771,6 +10771,7 @@
 
 	.smallMenu_active {
 		opacity: 1;
+		z-index: 9999;
 		transition: opacity linear 0.7s;
 	}
 
@@ -10798,3 +10799,73 @@
 	.form_contact_title {
 		display: none;
 	}
+
+	.wpcf7-not-valid-tip {
+		position: absolute!important;
+		z-index: 9993;
+		top: 33px;
+	}
+
+	/*paginations*/
+
+	.numeric-navigation {
+		clear: both;
+		display: table;
+		margin: 30px auto;
+		float: none;
+		text-align: center;
+		padding-top: 0;
+	}
+
+	.numeric-navigation .page-numbers:hover, .numeric-navigation .page-numbers.current {
+		color: #fff;
+		border-color: #9cc212;
+		background-color: #9cc212;
+		text-decoration: none;
+	}
+	.numeric-navigation .page-numbers:first-child {
+		margin-left: 0;
+	}
+	.numeric-navigation .page-numbers {
+		color: #2e2e2e;
+		font-weight: 500;
+		font-size: 18px;
+		width: 3.125em;
+		height: 3.125em;
+		line-height: 3.125em;
+		/* -webkit-border-radius: 3px; */
+		/* border-radius: 3px; */
+		text-align: center;
+		background-color: #fff;
+		display: inline-block;
+		margin: 0 5px;
+		border: 1px solid #f2f2f2;
+		-webkit-transition: .5s;
+		transition: .5s;
+	}
+
+	#searchform input#s {
+		border-color: yellowgreen !important;
+	}
+	.wpcf7-form .wpcf7-response-output {
+		display: none !important;
+	}
+	/*Contact*/
+	.grd-contact-box ul li .name {
+		font-size: 20px;
+	}
+
+	.grd-contact-box ul li a, .grd-contact-box ul .contact_adress_name, .grd-contact-box ul li .value {
+		font-size: 18px;
+		padding-left: 10px;
+	}
+
+	.grd-contact-box ul .contact_adress_name {
+		color: #9cc212;
+	}
+	.menu-item-has-children {
+		display: none;
+	}
+
+	/*Search page*/
+
